@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
+using SimpleSmtpInterceptor.Data;
 using SimpleSmtpInterceptor.Lib.Server;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using SimpleSmtpInterceptor.Data;
 
 namespace SimpleSmtpInterceptor.ConsoleApp
 {
