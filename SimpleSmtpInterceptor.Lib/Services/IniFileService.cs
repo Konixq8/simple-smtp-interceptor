@@ -18,9 +18,11 @@ namespace SimpleSmtpInterceptor.Lib.Services
         [DllImport("kernel32", CharSet = CharSet.Unicode)]
         static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
 
-        public IniFileService(string IniPath = null)
+        //The INI path is expected to be the full file path including the file name and extension
+        public IniFileService(string iniPath = null)
         {
-            _path = new FileInfo(IniPath ?? _executableName + ".ini").FullName;
+            //If the provided path is null then provide a default file name that will be located in the bin folder
+            _path = iniPath ?? new FileInfo(_executableName + ".ini").FullName;
         }
 
         public string Read(string Key, string Section = null)
